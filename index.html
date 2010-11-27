@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>corpo snake</title>
+  <script type="text/javascript" src="init.js"></script>
+  <script type="text/javascript" src="lib/uinterface.js"></script>
+  <script type="text/javascript" src="lib/utilities.js"></script>  
+  <script type="text/javascript" src="game/square.js"></script>
+  <script type="text/javascript" src="game/snake.js"></script>
+  <script type="text/javascript" src="game/food.js"></script>
+  <script type="text/javascript" src="game/score.js"></script>
+  
+  <style type="text/css">
+    body { text-align: center; font-family: Verdana, sans-serif; }
+    p { margin: 0; padding: 0; }
+    #container { margin: auto; overflow: hidden; position: relative; width: 800px; }
+    #snake { background-color: #000; border: 5px solid #aeaeae; float: left; }
+    #score { width: 200px; position: absolute; top: 20px; left: 600px; color: #ff0000; }
+  </style>
+  
+</head>
+  <body onload="Scene.init('snake', 'score');">
+
+  <div id="container">
+
+     <canvas width="800" height="600" id="snake">
+      <!-- fallback content for browsers with no CANVAS support -->
+     </canvas>
+     <div id="score">Score: 0</div>
+     
+  </div>
+
+   
+</body>
+</html>
