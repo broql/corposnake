@@ -10,6 +10,7 @@ var Scene = {
   SQUARE_SIZE: 20,
   SNAKES: [],
   INTERVAL_ID: null,
+  USER_KEY_BUFFER: [],
   
   init: function(id, score_id){
 
@@ -61,6 +62,10 @@ var Scene = {
     
     //set the props
     Scene.SNAKE_FOOD.draw();
+    
+    if(Scene.USER_KEY_BUFFER.length) {
+      Scene.SNAKES[0].setDirection(Scene.USER_KEY_BUFFER.shift());  
+    }
     
     //bring the protagonist in!
     Scene.SNAKES[0].move();
