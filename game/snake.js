@@ -1,9 +1,10 @@
-function Snake() {
+function Snake(current) {
 	
 	var self = this;
   self.size = 3;
   self.squares = [];
-	self.current = new Square().generate();
+	self.session_id = null;
+	self.current = current || new Square().generate();
 	self.toString = function() { return "Snake" };  
 }
 
@@ -58,6 +59,7 @@ Snake.prototype.swallow = function() {
 
 	if(this.current.x === Scene.SNAKE_FOOD.x &&
 		 this.current.y === Scene.SNAKE_FOOD.y) {
+		
 		Scene.CONTEXT.clearRect(Scene.SNAKE_FOOD.x,Scene.SNAKE_FOOD.y,Scene.SQUARE_SIZE,Scene.SQUARE_SIZE);
 		delete Scene.SNAKE_FOOD;
 		this.addSquare();
@@ -82,3 +84,4 @@ Snake.prototype.addSquare = function() {
 	
 	this.size++;
 }
+
